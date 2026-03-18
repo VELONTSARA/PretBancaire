@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nouvelle Simulation"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/et_nom_client"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom du client"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/et_nom_banque"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom de la banque"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/et_montant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Montant du prêt (Ar)"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/et_taux"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Taux d'intérêt (%)"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btn_calculer"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="CALCULER ET ENREGISTRER"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:id="@+id/tv_resultat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Résultat : --"
+            android:textSize="18sp"
+            android:textColor="@color/design_default_color_primary"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+    </LinearLayout>
+</ScrollView>
