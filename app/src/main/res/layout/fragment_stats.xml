@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.StatsFragment">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Analyse des Remboursements"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
 
-</FrameLayout>
+    <com.bernado.pretbancaire.utils.PieChartView
+        android:id="@+id/pie_chart"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginBottom="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_stat_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total à payer : Bleu"
+            android:textColor="#0000FF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_stat_max"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Montant Max : Rouge"
+            android:textColor="#FF0000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_stat_min"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Montant Min : Vert"
+            android:textColor="#00AA00"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

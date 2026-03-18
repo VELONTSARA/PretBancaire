@@ -7,5 +7,6 @@ data class Pret (
     val nomBanque: String,
     val montant: Double,
     val datePret: Date,
-    val tauxPret: Double
+    val tauxPret: Double,
+    val montantAPayer: Double
 )

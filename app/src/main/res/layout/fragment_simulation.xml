@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="2dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,56 +11,109 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tv_titre_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nouvelle Simulation"
+            android:text="Nouvelle prêt"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="2dp"/>
 
-        <EditText
-            android:id="@+id/et_nom_client"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nom du client"
-            android:inputType="textPersonName" />
+            app:suffixText=" (Compte)"
+            style="@style/Widget.Design.TextInputLayout">
+            <EditText
+                android:id="@+id/et_num_compte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Numéro de compte"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/et_nom_banque"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nom de la banque"
-            android:inputType="text" />
+            app:suffixText=" (Nom)"
+            style="@style/Widget.Design.TextInputLayout">
+            <EditText
+                android:id="@+id/et_nom_client"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom du client"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/et_montant"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Montant du prêt (Ar)"
-            android:inputType="numberDecimal" />
+            app:suffixText=" (Banque)"
+            style="@style/Widget.Design.TextInputLayout">
+            <EditText
+                android:id="@+id/et_nom_banque"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom de la banque"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/et_taux"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Taux d'intérêt (%)"
-            android:inputType="numberDecimal" />
+            app:suffixText=" (Montant Ar)"
+            style="@style/Widget.Design.TextInputLayout">
+            <EditText
+                android:id="@+id/et_montant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Montant du prêt"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:suffixText=" (%)"
+            style="@style/Widget.Design.TextInputLayout">
+            <EditText
+                android:id="@+id/et_taux"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Taux d'intérêt"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:suffixText=" (Date)"
+            style="@style/Widget.Design.TextInputLayout">
+            <EditText
+                android:id="@+id/et_date_pret"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date (JJ/MM/AAAA)"
+                android:inputType="date"
+                android:focusable="false"
+                android:clickable="true" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btn_calculer"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="CALCULER ET ENREGISTRER"
-            android:layout_marginTop="24dp" />
+            android:layout_height="40dp"
+            android:text="ENREGISTRER"
+            android:layout_marginTop="2dp" />
 
         <TextView
             android:id="@+id/tv_resultat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:text="Résultat : --"
             android:textSize="18sp"
-            android:textColor="@color/design_default_color_primary"
+            android:textColor="#3F51B5"
             android:textStyle="bold"
             android:gravity="center" />
 

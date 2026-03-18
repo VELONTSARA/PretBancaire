@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:weightSum="5">
+
+    <TextView
+        android:id="@+id/tv_item_nom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Nom"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_item_banque"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Banque"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_item_montant"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Montant"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_item_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Date"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_item_total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Total"
+        android:textStyle="bold"
+        android:textColor="#2E7D32"
+        android:textSize="12sp" />
+
+</LinearLayout>
