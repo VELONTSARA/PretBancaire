@@ -29,16 +29,25 @@ class PretAdapter(context: Context, resource: Int, objects: List<Pret>) :
         val tvTotal = view.findViewById<TextView>(R.id.tv_item_total)
 
         // On remplit les cases
+        // Dans getView du PretAdapter.kt
         pret?.let {
-            tvNom.text = it.nomClient
-            tvBanque.text = it.nomBanque
-            tvMontant.text = String.format("%.2f", it.montant)
+            tvNom.text = it.nom_client
+            tvBanque.text = it.nom_banque
+            tvMontant.text = String.format("%.2f Ar", it.montant)
 
-            // Formatage de la date pour que ce soit joli
-            val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-            tvDate.text = sdf.format(it.datePret)
+            // CORRECTION DATE : On affiche directement la String du serveur
+            // Si tu veux changer le format (ex: yyyy-MM-dd -> dd/MM/yyyy) :
+            val dateServeur = it.date_pret // ex: "2026-03-20"
+            try {
+                val parser = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                val formatter = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                val dateObj = parser.parse(dateServeur)
+                tvDate.text = formatter.format(dateObj!!)
+            } catch (e: Exception) {
+                tvDate.text = dateServeur // Si erreur, on affiche la date brute
+            }
 
-            tvTotal.text = String.format("%.2f", it.montantAPayer)
+            tvTotal.text = String.format("%.2f Ar", it.montantAPayer)
         }
 
         return view
