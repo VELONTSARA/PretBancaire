@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    > <View
+    android:layout_width="40dp"
+    android:layout_height="4dp"
+    android:layout_gravity="center"
+    android:background="#DDDDDD"
+    android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/tv_modal_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Options du prêt"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="20dp" />
+
+    <LinearLayout
+        android:id="@+id/btn_modal_edit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_edit"
+            app:tint="#3F51B5" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modifier les informations"
+            android:layout_marginStart="15dp"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_modal_delete"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_delete"
+            app:tint="#FF5252" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supprimer ce prêt"
+            android:layout_marginStart="15dp"
+            android:textColor="#FF5252"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

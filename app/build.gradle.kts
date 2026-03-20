@@ -45,6 +45,8 @@ dependencies {
     // et @JsonIgnoreProperties soient bien reconnues par Android
     implementation("com.fasterxml.jackson.core:jackson-annotations:2.15.2")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.2")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("com.airbnb.android:lottie:6.1.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

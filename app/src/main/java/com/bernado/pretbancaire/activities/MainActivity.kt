@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         // 2. Initialise Retrofit dès le démarrage de l'appli
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://10.112.66.17:8080/") // Ton adresse IP
+            .baseUrl("http://10.55.128.17:8080/") // Ton adresse IP
             .addConverterFactory(JacksonConverterFactory.create())
             .build()
 
@@ -43,14 +43,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun changerOnglet(position: Int) {
-        // Si tu utilises un ViewPager2 (le plus probable pour des onglets)
-        val viewPager = findViewById<androidx.viewpager2.widget.ViewPager2>(R.id.view_pager)
+        // 1. On cherche le fragment qui est ACTUELLEMENT dans le conteneur
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+
+        // 2. On vérifie si ce fragment contient le ViewPager (peu importe son nom de classe)
+        // On cherche l'ID du ViewPager directement dans la vue du fragment actuel
+        val viewPager = currentFragment?.view?.findViewById<androidx.viewpager2.widget.ViewPager2>(R.id.view_pager)
+
         if (viewPager != null) {
             viewPager.currentItem = position
+            android.util.Log.d("DEBUG_NAV", "C'est bon ! On bascule vers l'onglet $position")
         } else {
-            // Si tu utilises une BottomNavigationView à la place
-            // val nav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-            // nav.selectedItemId = R.id.nav_simulation_id
+            // Si on ne le trouve pas, on affiche une erreur précise dans les logs
+            android.util.Log.e("DEBUG_NAV", "ViewPager non trouvé. Fragment actuel : ${currentFragment?.javaClass?.simpleName}")
         }
     }
 }

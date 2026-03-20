@@ -10,11 +10,19 @@ import com.bernado.pretbancaire.R
 import com.bernado.pretbancaire.models.Pret
 import java.text.SimpleDateFormat
 import java.util.*
+import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
 
 class PretAdapter(context: Context, resource: Int, objects: List<Pret>) :
     ArrayAdapter<Pret>(context, resource, objects) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+        // Dans ta fonction getView :
+        val symbols = DecimalFormatSymbols(Locale.FRENCH)
+        symbols.groupingSeparator = ' ' // Espace pour les milliers
+        symbols.decimalSeparator = ','   // Virgule pour les centimes
+        val df = DecimalFormat("#,###.00", symbols)
+
         // On récupère le layout de la ligne
         val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.item_pret, parent, false)
 
@@ -33,7 +41,7 @@ class PretAdapter(context: Context, resource: Int, objects: List<Pret>) :
         pret?.let {
             tvNom.text = it.nom_client
             tvBanque.text = it.nom_banque
-            tvMontant.text = String.format("%.2f Ar", it.montant)
+            tvMontant.text = "${df.format(it.montant)} Ar"
 
             // CORRECTION DATE : On affiche directement la String du serveur
             // Si tu veux changer le format (ex: yyyy-MM-dd -> dd/MM/yyyy) :
@@ -47,7 +55,10 @@ class PretAdapter(context: Context, resource: Int, objects: List<Pret>) :
                 tvDate.text = dateServeur // Si erreur, on affiche la date brute
             }
 
-            tvTotal.text = String.format("%.2f Ar", it.montantAPayer)
+            tvTotal.text = "${df.format(it.montantAPayer)} Ar"
+                //String.format("%.2f Ar", it.montantAPayer)
+
+
         }
 
         return view

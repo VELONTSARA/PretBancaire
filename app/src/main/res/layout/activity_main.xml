@@ -12,7 +12,7 @@
         android:background="?attr/colorPrimary"
         android:gravity="start|center_vertical"
         android:paddingStart="16dp"
-        android:text="App Prêt Bancaire"
+        android:text="Prêt Bancaire"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
