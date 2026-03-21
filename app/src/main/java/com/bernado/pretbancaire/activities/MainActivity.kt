@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         // 2. Initialise Retrofit dès le démarrage de l'appli
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://10.55.128.17:8080/") // Ton adresse IP
+            .baseUrl("https://backend-pret-bancaire.onrender.com/")
+           // .baseUrl("http://10.55.128.17:8080/") // Ton adresse IP
             .addConverterFactory(JacksonConverterFactory.create())
             .build()
 
